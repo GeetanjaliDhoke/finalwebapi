@@ -68,19 +68,21 @@ namespace MedicalAPI.Controllers
             return NotFound();
         }
 
+        //Delete Lab-Tests
         [HttpDelete]
         [Route("[Controller]/{labid:int}")]
         public async Task<IActionResult> DeletelabtestAsync([FromRoute] int labid)
         {
             if(await labtestsRepository.Exists(labid))
             {
-                //Delete the student
-               var labtest = await labtestsRepository.DeleteLabtest(labid);
-                return Ok(mapper.Map<labtestsdomain>(labtest));
+                //Delete the labtest
+                var labtest = await labtestsRepository.DeleteLabtest(labid);
+                return Ok(mapper.Map<labtests>(labtest));
             }
             return NotFound();
         }
 
+        //Add Lab-Tests
         [HttpPost]
         [Route("[Controller]/Add")]
         public async Task<IActionResult> AddlabtestAsync([FromBody] AddLabRequest request)

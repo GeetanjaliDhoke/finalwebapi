@@ -14,6 +14,7 @@ namespace MedicalAPI.DomainModels
         public string email { get; set; }
         public string phone { get; set; }
         public string date { get; set; }
+        public string timing { get; set; }
         public string test { get; set; }
     }
 }

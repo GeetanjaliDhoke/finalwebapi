@@ -39,6 +39,7 @@ namespace MedicalAPI.Repositories
                 ExistingLabtests.email = request.email;
                 ExistingLabtests.phone = request.phone;
                 ExistingLabtests.date = request.date;
+                ExistingLabtests.timing = request.timing;
                 ExistingLabtests.test = request.test;
 
                 await context.SaveChangesAsync();
@@ -65,5 +66,6 @@ namespace MedicalAPI.Repositories
             await context.SaveChangesAsync();
             return labtest.Entity;
         }
+
     }
 }

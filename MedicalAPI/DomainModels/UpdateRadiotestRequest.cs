@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MedicalAPI.DomainModels
 {
-    public class UpdateLabRequest
+    public class UpdateRadiotestRequest
     {
         public string name { get; set; }
         public string email { get; set; }

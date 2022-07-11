@@ -41,10 +41,22 @@ namespace MedicalAPI
 
             services.AddControllers();
             services.AddSwaggerGen();
+            //labtestContext
             services.AddDbContext<labtestsContext>(options => 
             options.UseSqlServer(Configuration.GetConnectionString("Medical")));
 
+            //radiotestsContext
+            services.AddDbContext<radiotestsContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("Medical")));
+
+            //donationContext
+            services.AddDbContext<donationContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("Medical")));
+            
+
             services.AddScoped<labtestsRepository, sqllabtestsRepository>();
+            services.AddScoped<radiotestsRepository, sqlradiotestsRepository>();
+            services.AddScoped<donationRepository, sqldonationRepository>();
 
             services.AddSwaggerGen(c =>
             {
